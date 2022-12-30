@@ -65,3 +65,33 @@ select * from employeSQL where empAge >30
 --range
 select * from employeSQL where empsalary between 25000 and 35000
 
+-- in operator is used to select the multiple match values
+
+select * from employeSQL where empDeptid in(1,2,4)
+
+-- not in --> records those are not matched
+select * from employeSQL where empDeptid not in(1,2,4)
+
+select * from employeSQL where empAge in(23,24,25,26)
+select * from employeSQL where empDeptid not in (1,4,6,8,9)
+
+--like used to match the string with specific pattern
+
+select * from employeSQL where empName like 'a%' -- name start with s & contains any no of chars
+select * from employeSQL where empName like '%l' -- name end with j
+select * from employeSQL where empName like '%s%' -- name may contains a anywhere in the string
+
+select * from employeSQL where empName like '%[asr]'
+select * from employeSQL where empName like '[asr]%'
+
+select * from employeSQL where empName like '[a-h]%' -- range
+select * from employeSQL where empName like '%[d-r]'
+
+select * from employeSQL where empName like 'a______'
+select * from employeSQL where empName like '___l'
+select * from employeSQL where empName like '____o_'
+
+-- not like
+select * from employeSQL where empName not like 'a%'
+select * from employeSQL where empName not like '[asr]%'
+
